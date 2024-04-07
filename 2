@@ -1,0 +1,26 @@
+package exercicioss;
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
+
+public class exer2 {
+	 public static void main(String[] args) {
+		 contaTempo(8, 04, 2024);
+	    }
+
+	    public static void contaTempo(int dia, int mes, int ano) {
+	       
+	        LocalDate dataAtual = LocalDate.now();
+	        
+	        LocalDate dataDesejada = LocalDate.of(ano, mes, dia);
+	        long diasRestantes = ChronoUnit.DAYS.between(dataAtual, dataDesejada);
+	        if (diasRestantes > 0) {
+	            System.out.println("Faltam " + diasRestantes + " dias para a data " + dia + "/" + mes + "/" + ano);
+	        } else if (diasRestantes < 0) {
+	            System.out.println("A data " + dia + "/" + mes + "/" + ano + " já passou.");
+	        } else {
+	            System.out.println("Hoje é a data " + dia + "/" + mes + "/" + ano);
+	        }
+	    }
+	}
+	
+	
