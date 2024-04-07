@@ -1,0 +1,23 @@
+
+package exercicioss;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Locale;
+public class exercicio1 {
+
+	
+	public static void main(String[] args) {
+		 System.out.println(retornarDataPorExtenso());
+    }
+
+    public static String retornarDataPorExtenso() {
+        LocalDateTime agora = LocalDateTime.now();
+       
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEEE, 'dia' dd 'de' MMMM 'de' yyyy 'e agora são' HH 'horas e' mm 'minutos.'", Locale.forLanguageTag("pt-BR"));
+        String dataPorExtenso = agora.format(formatter);
+
+        return "Hoje é " + dataPorExtenso;
+    }
+}
+
